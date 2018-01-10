@@ -101,7 +101,7 @@ class Sortable extends Behavior {
      *                                      if string, ordering is restricted to records with the same foreign key value
      * @throws \yii\base\InvalidConfigException
      */
-    public function order($newPosition, $foreignKeyName = null) {
+    public function order($newPosition, $foreignKeyName = null, $llaves) {
         /**
          * @var $owner ActiveRecord
          */
