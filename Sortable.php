@@ -42,8 +42,8 @@ class Sortable extends Behavior {
 
     public function events()    {
         return [
-            ActiveRecord::EVENT_BEFORE_INSERT => 'beforeInsert',
-            ActiveRecord::EVENT_BEFORE_DELETE => 'beforeDelete',
+            //ActiveRecord::EVENT_BEFORE_INSERT => 'beforeInsert',
+            //ActiveRecord::EVENT_BEFORE_DELETE => 'beforeDelete',
         ];
     }
 
@@ -128,6 +128,10 @@ class Sortable extends Behavior {
             if (! $orderAttr)
                 throw new InvalidConfigException('No default order attribute found in '. get_called_class());
             $where = 1;
+        }
+
+        if ($llaves) {
+          $where = $llaves;
         }
 
         $oldPosition = $owner->getAttribute($orderAttr);
